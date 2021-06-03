@@ -18,11 +18,19 @@ const money = +prompt('"Ваш месячный доход?"', "10000"),
   mission = 10000,
   period = 7,
   budgetDay = money / 30; 
+  let  myIncome;
 
-
-
-
-
+if (budgetDay >= 1200) {
+   alert('"У вас высокий уровень дохода"');
+} else if ( budgetDay >= 600) {
+   alert('"У вас средний уровень дохода"');
+} else if (budgetDay >= 0) {
+   alert('"К сожалению у вас уровень дохода ниже среднего"');
+   myIncome = '"К сожалению у вас уровень дохода ниже среднего"';
+} else {
+   alert('что-то пошло не так');
+}
+//Пишем конструкцию условий для рассчёта уровня дохода
 
 console.log(typeof money);
 console.log(typeof income);
@@ -32,33 +40,10 @@ console.log("Период равен " + period + " месяцам");
 console.log("Цель заработать " + mission + " рублей");
 console.log(addExpenses.toLowerCase().split(", "));
 console.log(budgetDay);
-
-
-  
-   
-
-
-
-
-
-
-
 console.log("Бюджет на месяц:" + budgetMont);
-//Вычисляем бюджет на месяц
-console.log(
-  "Цель будет достигнута за " + Math.ceil(mission / budgetMont) + " месяцев"
-);
-//Считаем за сколько месяцев будет достигнута цель по накоплению
-console.log(Math.floor(budgetDay));
-//Поправляем budgetDay учитывая бюджет на месяц
-
-if (budgetDay >= 1200) {
-   alert('"У вас высокий уровень дохода"');
-} else if ( budgetDay >= 600) {
-   alert('"У вас средний уровень дохода"');
- } else if (budgetDay >= 0) {
-   alert('"К сожалению у вас уровень дохода ниже среднего"');
- }  else {
-  alert('чито то пошло нетак');
- }
-//Пишем конструкцию условий для рассчёта уровня дохода
+// Вычисляем бюджет на месяц
+console.log("Цель будет достигнута за " + Math.ceil(mission / budgetMont) + " месяцев");
+// Считаем за сколько месяцев будет достигнута цель по накоплению
+console.log('Бюджет на день: ' + Math.floor(budgetDay));
+// Поправляем budgetDay учитывая бюджет на месяц
+console.log(myIncome);
