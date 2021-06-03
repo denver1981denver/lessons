@@ -34,7 +34,9 @@ const budgetMont= (Number(money) - (Number(amount1) + Number(amount2)));
 console.log('Бюджет на месяц:' + budgetMont);
 //Вычисляем бюджет на месяц
 console.log('Цель будет достигнута за ' + Math.ceil(mission/budgetMont) +' месяцев');
+//Считаем за сколько месяцев будет достигнута цель по накоплению
 console.log(Math.floor(budgetDay)); 
+//Поправляем budgetDay учитывая бюджет на месяц
 
 if (budgetDay > 1200) {
   alert('"У вас высокий уровень дохода"');
@@ -52,3 +54,4 @@ if (budgetDay > 1200) {
 }  else {
   alert('почти средний класс');
 }
+//Пишем конструкцию условий для рассчёта уровня дохода
