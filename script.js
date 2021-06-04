@@ -18,18 +18,45 @@ const money = +prompt('"Ваш месячный доход?"', '10000'),
   mission = 10000,
   period = 7;
   
-let  myIncome;
+let showTypeOf = function(data) {
+   console.log(data, typeof(data));
+  };
+
+const getExpensesMonth = function(a, b) { // Объявил функцию getExpensesMonth
+  return a + b;
+};
+
+let expensesMonth = getExpensesMonth(amount1, amount2); // Возврат суммы расходов
+
+
+const getAccumulatedMonth = function(a, b) { // Объявил функцию getAccumulatedMonth
+  return a - b;
+};
+
+let accumulatedMonth = getAccumulatedMonth(money, expensesMonth); // Возврат накоплений за месяц
+
+
+const getTargetMonth = function(a, b) {  // Объявил функцию getAccumulatedMonth
+  return a / b;
+};
+
+let targetMonth = getTargetMonth(mission, accumulatedMonth); // Период за который будет достигнута цель
+
+
+let budgetDay = accumulatedMonth / 30; // Пересчитали бюджен на день согласно новым требованиям
+
+const getStatusIncome = function(){
 
 if (budgetDay >= 1200) {
-   alert('"У вас высокий уровень дохода"');
-} else if ( budgetDay >= 600) {
-   alert('"У вас средний уровень дохода"');
-} else if (budgetDay >= 0) {
-   alert('"К сожалению у вас уровень дохода ниже среднего"');
-   myIncome = '"К сожалению у вас уровень дохода ниже среднего"';
-} else {
-   alert('что-то пошло не так');
-}
+   return('"У вас высокий уровень дохода"');
+   } else if ( budgetDay >= 600) {
+   return('"У вас средний уровень дохода"');
+   } else if (budgetDay >= 0) {
+   return('"К сожалению у вас уровень дохода ниже среднего"');
+   } else {
+   return('что-то пошло не так');
+   }
+};
 //Пишем конструкцию условий для рассчёта уровня дохода
 
 console.log(typeof money);
