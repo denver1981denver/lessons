@@ -13,11 +13,11 @@ const money = +prompt('"Ваш месячный доход?"', '10000'),
   amount2 = +prompt('"Во сколько это обойдётся?"', '6000'),
   // спрашиваем у пользователя по 2 раза обязательную статью расходов и их стоимость,
   // сохраням каждые данные в двух разных переменных
-  budgetMont = money - (amount1 + amount2),
+  
   income = '"Фриланс"',
   mission = 10000,
-  period = 7,
-  budgetDay = money / 30; 
+  period = 7;
+  
 let  myIncome;
 
 if (budgetDay >= 1200) {
