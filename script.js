@@ -21,6 +21,10 @@ const money = +prompt('"Ваш месячный доход?"', '10000'),
 let showTypeOf = function(data) {
    console.log(data, typeof(data));
   };
+   showTypeOf(money);
+   showTypeOf(income);
+   showTypeOf(deposit);
+
 
 const getExpensesMonth = function(a, b) { // Объявил функцию getExpensesMonth
   return a + b;
@@ -59,18 +63,9 @@ if (budgetDay >= 1200) {
 };
 //Пишем конструкцию условий для рассчёта уровня дохода
 
-console.log(typeof money);
-console.log(typeof income);
-console.log(typeof deposit);
-console.log(addExpenses.length);
-console.log('Период равен ' + period + ' месяцам');
-console.log('Цель заработать ' + mission + ' рублей');
-console.log('Расходы: ', addExpenses.toLowerCase().split(', '));
-console.log('Бюджет на месяц:' + budgetMont);
-// Вычисляем бюджет на месяц
-console.log('Цель будет достигнута за ' + Math.ceil(mission / budgetMont) + ' месяцев');
-// Считаем за сколько месяцев будет достигнута цель по накоплению
+console.log('Cумма всех обязательных расходов за месяц: ', expensesMonth);
+console.log('Расходы: ',addExpenses.toLowerCase().split(', ')); 
+console.log('Цель будет достигнута за ' + targetMonth + ' месяцев');
 console.log('Бюджет на день: ' + Math.floor(budgetDay));
-// Поправляем budgetDay учитывая бюджет на месяц
-
-console.log(myIncome);
+console.log(getStatusIncome());
+// консоль
