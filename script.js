@@ -45,4 +45,5 @@ console.log('Цель будет достигнута за ' + Math.ceil(mission
 // Считаем за сколько месяцев будет достигнута цель по накоплению
 console.log('Бюджет на день: ' + Math.floor(budgetDay));
 // Поправляем budgetDay учитывая бюджет на месяц
+
 console.log(myIncome);
