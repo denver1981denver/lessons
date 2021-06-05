@@ -34,7 +34,7 @@ const getAccumulatedMonth = function(a, b) { // Объявил функцию ge
   return a - b;
 };
 
-const accumulatedMonth = getAccumulatedMonth(money, ExpensesMonth()); // Возврат накоплений за месяц
+const accumulatedMonth = getAccumulatedMonth(money, getExpensesMonth()); // Возврат накоплений за месяц
 
 
 const getTargetMonth = function() {  // Объявил функцию getAccumulatedMonth
@@ -57,9 +57,9 @@ if (budgetDay >= 1200) {
 };
 //Пишем конструкцию условий для рассчёта уровня дохода
 
-console.log('Cумма всех обязательных расходов за месяц: ', expensesMonth);
+console.log('Cумма всех обязательных расходов за месяц: ', getExpensesMonth());
 console.log('Расходы: ',addExpenses.toLowerCase().split(', ')); 
-console.log('Цель будет достигнута за ' + targetMonth + ' месяцев');
+console.log('Цель будет достигнута за ' + getTargetMonth() + ' месяцев');
 console.log('Бюджет на день: ' + Math.floor(budgetDay));
 console.log(getStatusIncome());
 // консоль
