@@ -26,28 +26,22 @@ let showTypeOf = function(data) {
    showTypeOf(deposit);
 
 
-const getExpensesMonth = function(a, b) { // Объявил функцию getExpensesMonth
-  return a + b;
+const getExpensesMonth = function() { // Объявил функцию getExpensesMonth
+  return amount1 + amount2;
 };
-
-let expensesMonth = getExpensesMonth(amount1, amount2); // Возврат суммы расходов
-
 
 const getAccumulatedMonth = function(a, b) { // Объявил функцию getAccumulatedMonth
   return a - b;
 };
 
-let accumulatedMonth = getAccumulatedMonth(money, expensesMonth); // Возврат накоплений за месяц
+const accumulatedMonth = getAccumulatedMonth(money, ExpensesMonth()); // Возврат накоплений за месяц
 
 
-const getTargetMonth = function(a, b) {  // Объявил функцию getAccumulatedMonth
-  return a / b;
+const getTargetMonth = function() {  // Объявил функцию getAccumulatedMonth
+  return mission / accumulatedMonth;
 };
 
-let targetMonth = getTargetMonth(mission, accumulatedMonth); // Период за который будет достигнута цель
-
-
-let budgetDay = accumulatedMonth / 30; // Пересчитали бюджен на день согласно новым требованиям
+const budgetDay = accumulatedMonth / 30; // Пересчитали бюджен на день согласно новым требованиям
 
 const getStatusIncome = function(){
 
