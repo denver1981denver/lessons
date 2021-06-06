@@ -1,40 +1,58 @@
 'use strict';
 
-const money = +prompt('"Ваш месячный доход?"', '10000'),
+const isNumber = function(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+};
+// функция проверки данных
+let money;
+
   // cпрашиваем у пользователя месячный доход
-  addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 
-    'квартплата, еда'),
+const  addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
   // просим пользователя перечислить возможные расходы за рассчитываемый период  
   deposit = confirm('"Есть ли у вас депозит в банке?"'),
   // спрашиваем у пользователя про наличие депозита в банке
-  expenses1 = prompt('"Введите обязательную статью расходов"', '"квартплата"'),
-  amount1 = +prompt('"Во сколько это обойдётся?"', '3000'),
-  expenses2 = prompt('"Введите обязательную статью расходов?"','"расходы на еду"'),
-  amount2 = +prompt('"Во сколько это обойдётся?"', '6000'),
-  // спрашиваем у пользователя по 2 раза обязательную статью расходов и их стоимость,
-  // сохраням каждые данные в двух разных переменных
   
   income = '"Фриланс"',
   mission = 10000,
   period = 7;
-  
-let showTypeOf = function(data) {
+
+const start = function() {
+  do {
+  money = prompt('Ваш месячный доход?');
+}
+ while (!isNumber(money));
+};
+start(); 
+ 
+
+const showTypeOf = function(data) {
    console.log(data, typeof(data));
   };
    showTypeOf(money);
    showTypeOf(income);
    showTypeOf(deposit);
 
+const expenses =[]; 
 
-const getExpensesMonth = function() { // Объявил функцию getExpensesMonth
-  return amount1 + amount2;
+const getExpensesMonth = function() { 
+  let sum = 0;
+
+  for (let i=0; i < 2; i++) {
+    expenses[i] = prompt('Введите обязательную статью расходов'); 
+    sum += +prompt('Во сколько это обойдётся?');
+  }
+  console.log(expenses);
+  return sum;
 };
+
+const expensesAmount = getExpensesMonth();
+
 
 const getAccumulatedMonth = function(a, b) { // Объявил функцию getAccumulatedMonth
   return a - b;
 };
 
-const accumulatedMonth = getAccumulatedMonth(money, getExpensesMonth()); // Возврат накоплений за месяц
+const accumulatedMonth = getAccumulatedMonth(money, expensesAmount); // Возврат накоплений за месяц
 
 
 const getTargetMonth = function() {  // Объявил функцию getAccumulatedMonth
@@ -57,8 +75,8 @@ if (budgetDay >= 1200) {
 };
 //Пишем конструкцию условий для рассчёта уровня дохода
 
-console.log('Cумма всех обязательных расходов за месяц: ', getExpensesMonth());
-console.log('Расходы: ',addExpenses.toLowerCase().split(', ')); 
+console.log('Cумма всех обязательных расходов за месяц: ', expensesAmount);
+console.log('Расходы: ', addExpenses.toLowerCase().split(', ')); 
 console.log('Цель будет достигнута за ' + getTargetMonth() + ' месяцев');
 console.log('Бюджет на день: ' + Math.floor(budgetDay));
 console.log(getStatusIncome());
