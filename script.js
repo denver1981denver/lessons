@@ -32,16 +32,20 @@ const showTypeOf = function(data) {
    showTypeOf(income);
    showTypeOf(deposit);
 
-const expenses =[]; 
+let expenses1, 
+    expenses2;
 
 const getExpensesMonth = function() { 
   let sum = 0;
 
   for (let i=0; i < 2; i++) {
-    expenses[i] = prompt('Введите обязательную статью расходов'); 
-    sum += +prompt('Во сколько это обойдётся?');
+    expenses1 = prompt('Введите обязательную статью расходов'); 
+    expenses2 = prompt('Во сколько это обойдётся?');
+  while (!isNumber(expenses2)) {
+    expenses2 = prompt('Во сколько это обойдётся?');
   }
-  console.log(expenses);
+    sum += +expenses2;
+  
   return sum;
 };
 
