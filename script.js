@@ -43,17 +43,17 @@ const getExpensesMonth = function() {
     expenses2 = prompt('Во сколько это обойдётся?');
   while (!isNumber(expenses2)) {
     expenses2 = prompt('Во сколько это обойдётся?');
-  }
+    }
     sum += +expenses2;
-  
+  }
   return sum;
 };
 
 const expensesAmount = getExpensesMonth();
 
 
-const getAccumulatedMonth = function(a, b) { // Объявил функцию getAccumulatedMonth
-  return a - b;
+const getAccumulatedMonth = function(money, expensesAmount) { // Объявил функцию getAccumulatedMonth
+  return money - expensesAmount;
 };
 
 const accumulatedMonth = getAccumulatedMonth(money, expensesAmount); // Возврат накоплений за месяц
@@ -62,7 +62,13 @@ const accumulatedMonth = getAccumulatedMonth(money, expensesAmount); // Возв
 const getTargetMonth = function() {  // Объявил функцию getAccumulatedMonth
   return mission / accumulatedMonth;
 };
-
+const getStatusTargetMonth = function() {
+  if(getTargetMonth() < 0) {
+  return('Цель не будет достигнута');
+} else {
+  return ('Цель будет достигнута за ' + getTargetMonth() + ' месяцев');
+}
+};
 const budgetDay = accumulatedMonth / 30; // Пересчитали бюджен на день согласно новым требованиям
 
 const getStatusIncome = function(){
@@ -81,7 +87,7 @@ if (budgetDay >= 1200) {
 
 console.log('Cумма всех обязательных расходов за месяц: ', expensesAmount);
 console.log('Расходы: ', addExpenses.toLowerCase().split(', ')); 
-console.log('Цель будет достигнута за ' + getTargetMonth() + ' месяцев');
+console.log(getStatusTargetMonth());
 console.log('Бюджет на день: ' + Math.floor(budgetDay));
 console.log(getStatusIncome());
 // консоль
