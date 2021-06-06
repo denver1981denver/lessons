@@ -23,7 +23,7 @@ const start = function() {
  while (!isNumber(money));
 };
 start(); 
- 
+// проверка данных money 
 
 const showTypeOf = function(data) {
    console.log(data, typeof(data));
@@ -31,7 +31,7 @@ const showTypeOf = function(data) {
    showTypeOf(money);
    showTypeOf(income);
    showTypeOf(deposit);
-
+// проверка переменных на тип данных
 let expenses1, 
     expenses2;
 
@@ -48,20 +48,22 @@ const getExpensesMonth = function() {
   }
   return sum;
 };
-
+//ввод данных,проверка
 const expensesAmount = getExpensesMonth();
+// сумма расходов
 
-
-const getAccumulatedMonth = function(money, expensesAmount) { // Объявил функцию getAccumulatedMonth
+const getAccumulatedMonth = function(money, expensesAmount) { 
   return money - expensesAmount;
 };
 
-const accumulatedMonth = getAccumulatedMonth(money, expensesAmount); // Возврат накоплений за месяц
+const accumulatedMonth = getAccumulatedMonth(money, expensesAmount); 
+// Возврат накоплений за месяц
 
 
-const getTargetMonth = function() {  // Объявил функцию getAccumulatedMonth
+const getTargetMonth = function() {  
   return mission / accumulatedMonth;
 };
+// подсчитан период достижения цели
 const getStatusTargetMonth = function() {
   if(getTargetMonth() < 0) {
   return('Цель не будет достигнута');
@@ -69,6 +71,7 @@ const getStatusTargetMonth = function() {
   return ('Цель будет достигнута за ' + getTargetMonth() + ' месяцев');
 }
 };
+// проверка данных на отрицательное число
 const budgetDay = accumulatedMonth / 30; // Пересчитали бюджен на день согласно новым требованиям
 
 const getStatusIncome = function(){
