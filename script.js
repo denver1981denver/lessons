@@ -34,15 +34,16 @@ let appData = {
                  value = 0;
             data = prompt('Введите обязательную статью расходов');
             do {
-            value = +prompt('Во сколько это обойдёться');
+            value = prompt('Во сколько это обойдёться');
             } while (!isNumber(value));
-            appData.expenses[data] = value;  
+            appData.expenses[data] = +value;  
         }
     },
     getExpensesMonth: function() { // Функция возвращает сумму всех обязательных расходов за месяц
         appData.expensesMonth = 0;
         for (let elem in appData.expenses) {
             appData.expensesMonth += appData.expenses[elem];
+            console.log(appData.expensesMonth);
         }
     },
     getBudget: function() { // Функция возвращает Накопления за месяц (Доходы минус расходы)
