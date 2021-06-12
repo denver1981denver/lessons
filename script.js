@@ -115,3 +115,4 @@ console.log('Уровень дохода: ', appData.getStatusIncome());
 
 console.log(appData.addExpenses[0] + appData.addExpensesslice(1));
 
+console.log(appData.addExpenses[0].toUpperCase() + appData.addExpenses.slice(1,16) + appData.addExpenses[16].toUpperCase() + appData.addExpenses.slice(17));
