@@ -44,7 +44,7 @@ const appData = {
         
         const arr = appData.addExpenses.toLowerCase().split(', ');
 
-       // console.log(arr.map(item => item[0].toUpperCase() + item.slice(1)).join(', '));
+     
 
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
         for (let i = 0; i < 2; i++) {
@@ -115,5 +115,5 @@ console.log(targetMonth >= 0 ?
     `Цель будет достигнута за: ${targetMonth} месяц(а/ев)` :
     'Цель не будет достигнута');
 console.log('Уровень дохода: ', appData.getStatusIncome());
-
+  const arr = appData.addExpenses.toLowerCase().split(', ');
 console.log(arr.map(item => item[0].toUpperCase() + item.slice(1)).join(', '));
