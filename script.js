@@ -41,7 +41,7 @@ const appData = {
         appData.addExpenses = prompt('Перечислите возможные расходы  через запятую',
             'расходы на еду, коммуналка');
         
-        const arr = appData.addExpenses.toLowerCase().split(',');
+        const arr = appData.addExpenses.toLowerCase().split(', ');
 
         console.log(arr.map(item => item[0].toUpperCase() + item.slice(1)).join(', '));
 
