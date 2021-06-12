@@ -41,8 +41,10 @@ const appData = {
         appData.addExpenses = prompt('Перечислите возможные расходы  через запятую',
             'расходы на еду, коммуналка');
         
+        const arr = appData.addExpenses.toLowerCase().split(',');
 
-    //    appData addExpenses.toLowerCase().split(',');
+        console.log(arr.map(item => item[0].toUpperCase() + item.slice(1)).join(', '));
+
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
         for (let i = 0; i < 2; i++) {
            let   data = 0,
@@ -114,4 +116,3 @@ console.log(targetMonth >= 0 ?
 console.log('Уровень дохода: ', appData.getStatusIncome());
 
 
-console.log(appData.addExpenses[0].toUpperCase() + appData.addExpenses.slice(1,16) + appData.addExpenses[16].toUpperCase() + appData.addExpenses.slice(17));
