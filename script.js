@@ -38,10 +38,8 @@ const appData = {
             } while(!isNumber(cashIncom));
              appData.income[itemIncom] = +cashIncom;
         }
-
-        
-        appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую',
-            'расходы на еду, коммуналка'),
+        appData.addExpenses = prompt('Перечислите возможные расходы  через запятую',
+            'расходы на еду, коммуналка');
         
 
     //    appData addExpenses.toLowerCase().split(',');
@@ -49,9 +47,9 @@ const appData = {
         for (let i = 0; i < 2; i++) {
            let   data = 0,
                  value = 0;
-            // do {    
+             do {    
             data = prompt('Введите обязательную статью расходов', 'коммуналка,расходы на еду');
-            // } while(isNumber(data) || data === null);
+            } while(isNumber(data) || data === null);
             do {
             value = prompt('Во сколько это обойдёться', 3000);
             } while(!isNumber(value));
