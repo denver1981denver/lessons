@@ -40,10 +40,11 @@ const appData = {
         }
         appData.addExpenses = prompt('Перечислите возможные расходы  через запятую',
             'расходы на еду, коммуналка');
+         
         
         const arr = appData.addExpenses.toLowerCase().split(', ');
 
-        console.log(arr.map(item => item[0].toUpperCase() + item.slice(1)).join(', '));
+       // console.log(arr.map(item => item[0].toUpperCase() + item.slice(1)).join(', '));
 
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
         for (let i = 0; i < 2; i++) {
@@ -61,7 +62,7 @@ const appData = {
     getExpensesMonth: function() { // Функция возвращает сумму всех обязательных расходов за месяц
         appData.expensesMonth = 0;
         for (let elem in appData.expenses) {
-            appData.expensesMonth += appData.expenses[elem];
+          appData.expensesMonth += appData.expenses[elem];
         }
     },
     getBudget: function() { // Функция возвращает Накопления за месяц (Доходы минус расходы)
@@ -115,4 +116,4 @@ console.log(targetMonth >= 0 ?
     'Цель не будет достигнута');
 console.log('Уровень дохода: ', appData.getStatusIncome());
 
-
+console.log(arr.map(item => item[0].toUpperCase() + item.slice(1)).join(', '));
