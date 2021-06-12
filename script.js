@@ -39,21 +39,22 @@ const appData = {
              appData.income[itemIncom] = +cashIncom;
         }
 
-        let addExpenses = '';
-        do {
-        addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую',
-            'расходы на еду, коммуналка');
-        } while (isNumber(addExpenses) || addExpenses === null);
+        
+        appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую',
+            'расходы на еду, коммуналка'),
+        
 
-        appData.addExpenses = addExpenses.toLowerCase().split(',');
+    //    appData addExpenses.toLowerCase().split(',');
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
         for (let i = 0; i < 2; i++) {
            let   data = 0,
                  value = 0;
+            // do {    
             data = prompt('Введите обязательную статью расходов', 'коммуналка,расходы на еду');
+            // } while(isNumber(data) || data === null);
             do {
             value = prompt('Во сколько это обойдёться', 3000);
-            } while (!isNumber(value));
+            } while(!isNumber(value));
             appData.expenses[data] = +value;  
         }
     },
@@ -114,6 +115,5 @@ console.log(targetMonth >= 0 ?
     'Цель не будет достигнута');
 console.log('Уровень дохода: ', appData.getStatusIncome());
 
+console.log(appData.addExpenses[0] + appData.addExpensesslice(1));
 
-
-appData.addExpenses: [];
