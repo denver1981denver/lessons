@@ -143,11 +143,11 @@ const buttonStart = document.getElementById('start'),
 
     inputSalaryAmount = document.querySelector('.salary-amount'),
 
-    inputincomeTitle = document.querySelector('.income-title'),
-
+    inputIncomeTitle = document.querySelector('input.income-title'),
+    
     inputincomeAmount = document.querySelector('.income-amount'),
 
-    inputExpensesTitle = document.querySelector('.expenses-title'),
+    inputExpensesTitle = document.querySelector('input.expenses-title'),
 
     inputExpensesAmount = document.querySelector('.expenses-amount'),
 
@@ -160,4 +160,5 @@ const buttonStart = document.getElementById('start'),
     inputTargetAmount = document.querySelector('.target-amount'),
 
     inputPeriodSelect = document.querySelector('[type="range"]');
+
 
