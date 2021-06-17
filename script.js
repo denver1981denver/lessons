@@ -32,10 +32,11 @@ bookChaptersFive[1].after(bookChaptersFive[9]);
 bookChaptersFive[4].after(bookChaptersFive[2]);
 bookChaptersFive[8].before(bookChaptersFive[5]);
 // Восстановлен порядок во пятой книге
+
 newChapter.textContent = ' “Глава 8: За пределами ES6”';
 books[2].append(newChapter);
 books[2].append(bookChaptersSix[9]);
-
+// добавлена глава в 6 книге
 
 
 
