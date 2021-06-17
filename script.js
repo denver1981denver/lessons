@@ -15,6 +15,7 @@ books[2].before(books[5]);
 // Восстановлен порядок книг
 
 document.body.style.backgroundImage = 'url(image/you-dont-know-js.jpg)';
+// Замена картинки заднего фона
 
 bookTitleThree[4].textContent = 'Книга 3. this и Прототипы Объектов';
 
