@@ -18,7 +18,7 @@ document.body.style.backgroundImage = 'url(image/you-dont-know-js.jpg)';
 // Замена картинки заднего фона
 
 bookTitleThree[4].textContent = 'Книга 3. this и Прототипы Объектов';
-
+// Исправлен заголовок в книге 3
 advertising.remove();
 
 
