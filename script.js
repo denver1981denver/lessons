@@ -19,8 +19,9 @@ document.body.style.backgroundImage = 'url(image/you-dont-know-js.jpg)';
 
 bookTitleThree[4].textContent = 'Книга 3. this и Прототипы Объектов';
 // Исправлен заголовок в книге 3
-advertising.remove();
 
+advertising.remove();
+// Удалена реклама со страницы
 
 bookChaptersTwo[9].after(bookChaptersTwo[2]);
 bookChaptersTwo[3].after(bookChaptersTwo[6]);
