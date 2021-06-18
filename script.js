@@ -3,6 +3,48 @@ const isNumber = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
+const buttonStart = document.getElementById('start'),
+
+    buttonPlusIncome = document.getElementsByTagName('button')[0],
+
+    buttonPlusExpenses = document.getElementsByTagName('button')[1],
+
+    checkboxDeposit = document.querySelector('#deposit-check'),
+
+    inputAdditionalIncomeItem = document.querySelectorAll('.additional_income-item'),
+
+    inputBudgetDayValue = document.getElementsByClassName('result-total')[1], 
+
+    inputExpensesMonthValue = document.getElementsByClassName('result-total')[2],
+
+    inputAdditionalInc = document.getElementsByClassName('result-total')[3],
+
+    inputAdditionalExpenses = document.getElementsByClassName('result-total')[4],
+
+    inputIncomePeriod = document.getElementsByClassName('result-total')[5],
+
+    inputTargetMonth = document.getElementsByClassName('result-total')[6],
+
+    inputSalaryAmount = document.querySelector('.salary-amount'),
+
+    inputIncomeTitle = document.querySelector('input.income-title'),
+    
+    inputincomeAmount = document.querySelector('.income-amount'),
+
+    inputExpensesTitle = document.querySelector('input.expenses-title'),
+
+    inputExpensesAmount = document.querySelector('.expenses-amount'),
+
+    inputAdditionalExpensesItem = document.querySelector('.additional_expenses-item'),
+
+    inputDepositAmount = document.querySelector('.deposit-amount'),
+
+    inputDepositPercent = document.querySelector('.deposit-percent'),
+
+    inputTargetAmount = document.querySelector('.target-amount'),
+
+    inputPeriodSelect = document.querySelector('[type="range"]');
+
 let money;
 const start = function() {
         do {
@@ -119,46 +161,6 @@ console.log('Уровень дохода: ', appData.getStatusIncome());
 console.log(arr.map(item => item[0].toUpperCase() + item.slice(1)).join(', '));
 
 
-const buttonStart = document.getElementById('start'),
 
-    buttonPlusIncome = document.getElementsByTagName('button')[0],
-
-    buttonPlusExpenses = document.getElementsByTagName('button')[1],
-
-    checkboxDeposit = document.querySelector('#deposit-check'),
-
-    inputAdditionalIncomeItem = document.querySelectorAll('.additional_income-item'),
-
-    inputBudgetDayValue = document.getElementsByClassName('result-total')[1], 
-
-    inputExpensesMonthValue = document.getElementsByClassName('result-total')[2],
-
-    inputAdditionalInc = document.getElementsByClassName('result-total')[3],
-
-    inputAdditionalExpenses = document.getElementsByClassName('result-total')[4],
-
-    inputIncomePeriod = document.getElementsByClassName('result-total')[5],
-
-    inputTargetMonth = document.getElementsByClassName('result-total')[6],
-
-    inputSalaryAmount = document.querySelector('.salary-amount'),
-
-    inputIncomeTitle = document.querySelector('input.income-title'),
-    
-    inputincomeAmount = document.querySelector('.income-amount'),
-
-    inputExpensesTitle = document.querySelector('input.expenses-title'),
-
-    inputExpensesAmount = document.querySelector('.expenses-amount'),
-
-    inputAdditionalExpensesItem = document.querySelector('.additional_expenses-item'),
-
-    inputDepositAmount = document.querySelector('.deposit-amount'),
-
-    inputDepositPercent = document.querySelector('.deposit-percent'),
-
-    inputTargetAmount = document.querySelector('.target-amount'),
-
-    inputPeriodSelect = document.querySelector('[type="range"]');
 
 
