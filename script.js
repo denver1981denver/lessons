@@ -1,4 +1,5 @@
 'use strict';
+
 const isNumber = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 };
@@ -49,27 +50,33 @@ const buttonStart = document.getElementById('start'),
 
 
 const appData = {
-    income: {}, // Статья доп дохода
+    budget: 0,
+    budgetDay: 0,
+    budgetMonth: 0,
+    income: {}, 
     addIncome: [],
-    expenses: {}, // список обязательных статей расходов
-    addExpenses: [], // строка с перечислением дополнительных расходов
-    deposit: false, // надичие депозита в банке
-    percentDeposit: 0, // Проценты депозита
-    moneyDeposit: 0, // Сумма заложенная в депозит
-    mission: 10000, // желаемая цель (Какую сумму хотите накопить)
+    expenses: {},
+    expensesMonth: 0, 
+    addExpenses: [], 
+    deposit: false, 
+    percentDeposit: 0, 
+    moneyDeposit: 0, 
+    mission: 10000, 
     period: 7,
     start: function() {
-        do {
-            money = prompt('Ваш месячный доход?', 10000);
-        } while (!isNumber(money));
+        // do {
+        //     money = prompt('Ваш месячный доход?', 10000);
+        // } while (!isNumber(money));
+        appData.budget = inputSalaryAmount.value;
+        console.log('inputSalaryAmount.value:', inputSalaryAmount.value);
         // appData.asking();
         // appData.getExpensesMonth();
         // appData.getBudget();
     },
-    budget: 0,
-    budgetDay: 0, // Дневной бюджет (доход за месяц / 30)
-    budgetMonth: 0,
-    expensesMonth: 0,
+   
+     
+    
+
     asking: function() {
         if(confirm('Есть ли у вас дополнительный источник заработка?')){
             let itemIncom ='';
