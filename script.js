@@ -62,9 +62,9 @@ const appData = {
         do {
             money = prompt('Ваш месячный доход?', 10000);
         } while (!isNumber(money));
-        appData.asking();
-        appData.getExpensesMonth();
-        appData.getBudget();
+        // appData.asking();
+        // appData.getExpensesMonth();
+        // appData.getBudget();
     },
     budget: +money, // Доход за месяц
     budgetDay: 0, // Дневной бюджет (доход за месяц / 30)
@@ -149,20 +149,15 @@ const appData = {
 
 buttonStart.addEventListener('click', appData.start);
 
-appData.asking();
-appData.getExpensesMonth();
-appData.getBudget();
+
 appData.getInfoDeposit();
 
 const targetMonth = appData.getTargetMonth();
 
-console.log('Расходы за месяц: ', appData.expensesMonth);
+
 console.log(targetMonth >= 0 ?
     `Цель будет достигнута за: ${targetMonth} месяц(а/ев)` :
     'Цель не будет достигнута');
-console.log('Уровень дохода: ', appData.getStatusIncome());
-  const arr = appData.addExpenses.toLowerCase().split(', ');
-console.log(arr.map(item => item[0].toUpperCase() + item.slice(1)).join(', '));
 
 
 
