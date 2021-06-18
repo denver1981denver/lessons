@@ -45,7 +45,7 @@ const buttonStart = document.getElementById('start'),
 
     inputPeriodSelect = document.querySelector('[type="range"]');
 
-let money;
+
 
 
 const appData = {
@@ -66,7 +66,7 @@ const appData = {
         // appData.getExpensesMonth();
         // appData.getBudget();
     },
-    budget: +money, // Доход за месяц
+    budget: 0,
     budgetDay: 0, // Дневной бюджет (доход за месяц / 30)
     budgetMonth: 0,
     expensesMonth: 0,
