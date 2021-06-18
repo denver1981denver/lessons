@@ -62,6 +62,9 @@ const appData = {
         do {
             money = prompt('Ваш месячный доход?', 10000);
         } while (!isNumber(money));
+        appData.asking();
+        appData.getExpensesMonth();
+        appData.getBudget();
     },
     budget: +money, // Доход за месяц
     budgetDay: 0, // Дневной бюджет (доход за месяц / 30)
@@ -143,7 +146,9 @@ const appData = {
       return  appData.budgetMonth * appData.period;
     }
 };
-appData.start();
+
+buttonStart.addEventListener('click', appData.start);
+
 appData.asking();
 appData.getExpensesMonth();
 appData.getBudget();
