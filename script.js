@@ -46,13 +46,7 @@ const buttonStart = document.getElementById('start'),
     inputPeriodSelect = document.querySelector('[type="range"]');
 
 let money;
-const start = function() {
-        do {
-            money = prompt('Ваш месячный доход?', 10000);
-        } while (!isNumber(money));
-    };
 
-start();
 
 const appData = {
     income: {}, // Статья доп дохода
@@ -64,6 +58,11 @@ const appData = {
     moneyDeposit: 0, // Сумма заложенная в депозит
     mission: 10000, // желаемая цель (Какую сумму хотите накопить)
     period: 7,
+    start: function() {
+        do {
+            money = prompt('Ваш месячный доход?', 10000);
+        } while (!isNumber(money));
+    },
     budget: +money, // Доход за месяц
     budgetDay: 0, // Дневной бюджет (доход за месяц / 30)
     budgetMonth: 0,
@@ -144,7 +143,7 @@ const appData = {
       return  appData.budgetMonth * appData.period;
     }
 };
-
+appData.start();
 appData.asking();
 appData.getExpensesMonth();
 appData.getBudget();
