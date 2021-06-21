@@ -43,11 +43,7 @@ const start = document.getElementById('start'),
     moneyDeposit: 0,  
     start: function() {
 
-       // if(salaryAmount.value === ''){
-           //  alert('Ошибка, поле "Месячный доход" должно быть заполнено!');
-        //     return;
-        // }
-        
+        if(salaryAmount.value.trim() !== ''){
         appData.budget = +salaryAmount.value;
         appData.getExpenses();
         appData.getIncome();
@@ -56,6 +52,7 @@ const start = document.getElementById('start'),
         appData.getAddIncome();
         appData.getBudget();
         appData.showResult();
+        };
     },
     showResult: function(){
         budgetMonthValue.value = appData.budgetMonth;
@@ -169,9 +166,9 @@ const start = document.getElementById('start'),
         document.querySelector('.period-amount').textContent = event.target.value;
         incomePeriodValue.value = appData.calcPeriod();
     },
-    blockStart: () => {
+     blockStart: () => {
         start.disabled = !salaryAmount.value.trim();
-    }
+     }
 };
 appData.blockStart();
 start.addEventListener('click', appData.start);
