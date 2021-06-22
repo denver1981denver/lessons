@@ -63,7 +63,7 @@ const start = document.getElementById('start'),
         targetMonthValue.value = Math.ceil(appData.getTargetMonth());
         incomePeriodValue.value = appData.calcPeriod();
         periodSelect.addEventListener('input', function(){
-            incomePeriod.value = appData.calcPeriod();
+            incomePeriodValue.value = appData.calcPeriod();
         });
     },
 
