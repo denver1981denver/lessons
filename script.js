@@ -180,6 +180,14 @@ const start = document.getElementById('start'),
          resultInputAll.forEach(function(elem) {
              elem.value = '';
          });
+        this.budget = 0;
+        this.budgetDay = 0;
+        this.budgetMonth = 0;
+         this.income = {}; 
+         this.incomeMonth = 0;
+         this.addIncome = [];
+         this.expensesMonth = 0; 
+         this.addExpenses = [];  
     },
   
     changePeriodSelect:(event) => {
