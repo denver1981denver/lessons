@@ -175,7 +175,7 @@ const start = document.getElementById('start'),
             periodAmount.innerHTML = periodSelect.value;
             start.style.display = 'block';
             cancel.style.display = 'none';
-
+            appData.blockStart();
         });
          resultInputAll.forEach(function(elem) {
              elem.value = '';
